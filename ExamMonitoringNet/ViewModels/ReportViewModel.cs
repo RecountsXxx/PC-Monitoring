@@ -11,7 +11,7 @@ namespace ExamMonitoringNet.ViewModels
 {
     class ReportViewModel : ViewModelBase
     {
-        private List<string> _listRunningApps;
+        private List<string> _listRunningApps = new List<string>();
         public List<string> ListRunningApps
         {
             get { return _listRunningApps; }
@@ -19,13 +19,13 @@ namespace ExamMonitoringNet.ViewModels
         }
 
 
-        private List<string> _listInputKeywords;
+        private List<string> _listInputKeywords = new List<string>();
         public List<string> ListInputKeywords
         {
             get { return _listInputKeywords; }
             set { _listInputKeywords = value; OnPropertyChanged(); }
         }
-        
+
 
         public ReportViewModel()
         {
@@ -34,17 +34,12 @@ namespace ExamMonitoringNet.ViewModels
         }
         public void RefreshList()
         {
-            while(true)
-            {
-                try
-                {
-                    ListRunningApps = MainViewModel.listRunningAplication.ToList();
-                    ListInputKeywords = MainViewModel.listInputKeywords.ToList();
-                }
-                catch
-                {
 
-                }
+            while (true)
+            {
+                ListRunningApps = MainViewModel.listRunningAplication.ToList();
+                ListInputKeywords = MainViewModel.listInputKeywords.ToList();
+                    Thread.Sleep(1000);
             }
         }
     }

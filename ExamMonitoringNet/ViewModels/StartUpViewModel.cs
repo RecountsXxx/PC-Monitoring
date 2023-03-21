@@ -115,7 +115,7 @@ namespace ExamMonitoringNet.ViewModels
                     int vkCode = Marshal.ReadInt32(lParam);
 
                     string str = string.Empty;
-                    if (Enum.IsDefined(typeof(KeysUS), vkCode))
+                    if (Enum.IsDefined(typeof(Keys), vkCode))
                     {
                         str += Convert.ToString((KeysUS)vkCode);
                         str = str.Replace("LShiftKey", "");
@@ -133,6 +133,7 @@ namespace ExamMonitoringNet.ViewModels
                     {
                         if (MainViewModel.PathSave != null)
                         {
+
                             File.AppendAllText(MainViewModel.PathSave + "/RecordKeyboard.txt", str);
                         }
                     }
