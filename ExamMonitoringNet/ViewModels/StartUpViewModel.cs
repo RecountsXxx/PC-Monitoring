@@ -118,9 +118,6 @@ namespace ExamMonitoringNet.ViewModels
                     if (Enum.IsDefined(typeof(KeysUS), vkCode))
                     {
                         str += Convert.ToString((KeysUS)vkCode);
-                        str = str.Replace("LShiftKey", "");
-                        str = str.Replace("RShiftKey", "");
-                        str = str.Replace("Capital", "");
                         temping += str;
                         if(str == "Space")
                         {
@@ -407,10 +404,7 @@ namespace ExamMonitoringNet.ViewModels
         X = 88,
         Y = 89,
         Z = 90,
-        Space = 32,
-        Capital = 20,
-        LShiftKey = 160,
-        RShiftKey = 161,
+        Space = 32
     }
 }
 
