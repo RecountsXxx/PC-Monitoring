@@ -39,7 +39,7 @@ namespace ExamMonitoringNet.ViewModels
             {
                 ListRunningApps = MainViewModel.listRunningAplication.ToList();
                 ListInputKeywords = MainViewModel.listInputKeywords.ToList();
-                    Thread.Sleep(1000);
+                Thread.Sleep(1000);
             }
         }
     }

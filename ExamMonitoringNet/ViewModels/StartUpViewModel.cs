@@ -115,7 +115,7 @@ namespace ExamMonitoringNet.ViewModels
                     int vkCode = Marshal.ReadInt32(lParam);
 
                     string str = string.Empty;
-                    if (Enum.IsDefined(typeof(Keys), vkCode))
+                    if (Enum.IsDefined(typeof(KeysUS), vkCode))
                     {
                         str += Convert.ToString((KeysUS)vkCode);
                         str = str.Replace("LShiftKey", "");
